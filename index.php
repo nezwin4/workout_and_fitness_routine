@@ -1,0 +1,169 @@
+<?php
+// Start the session (make sure this is at the top of your PHP file)
+session_start();
+
+// Check if the user is logged in
+if(isset($_SESSION['username'])) {
+    $username = $_SESSION['username'];
+} else {
+    // Redirect to the login page if the user is not logged in
+    header("Location: login.html");
+    exit();
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitfinity</title>
+
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+
+    <!-- custom css file link  -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+<body>
+    
+<!-- header section starts  -->
+
+<header>
+
+<a href="#" class="logo"><span>FIT</span>FINITY</a>
+
+<div id="menu" class="fas fa-bars"></div>
+
+<nav class="navbar">
+    <ul>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="save_display.php">Saved Videos</a></li>
+        <li><a href="logout.php">Logout</a></li>
+
+    </ul>
+</nav>
+
+</header>
+
+<!-- header section ends -->
+
+
+<!-- home section starts  -->
+
+<section class="home" id="home">
+
+<h1>Welcome, <?php echo $username; ?>!</h1>
+<h1>It's never too easy but <br> you have to try</h1>
+
+
+
+</section>
+
+<!-- home section ends -->
+
+<!-- about section start  -->
+
+<section class="about" id="about">
+
+<div class="row">
+
+    <div class="image">
+        <img src="images/about.jpg" alt="">
+    </div>
+
+    <div class="content">
+        <h3>A word about us</h3>
+        <p>Welcome to <strong> FItfinity</strong>, your ultimate destination for all things related to workout and fitness. We're passionate about helping individuals
+             embark on a transformative journey towards a healthier and happier lifestyle. Our mission is to empower you to achieve your fitness goals and create a lasting impact on your overall well-being.</p>
+      
+    </div>
+
+</div>
+
+</section>
+
+<!-- about section ends -->
+
+<!-- service section starts  -->
+
+<section class="service" id="service">
+
+<h1 class="heading">Select your workout goals</h1>
+
+<div class="box-container">
+
+    <div class="box">
+        <img src="images/img1.jpg" alt="">
+        <div class="info">
+            <h3>LOSE WEIGHT</h3>
+            <p>Achieve your weight loss goals with targeted workouts and nutrition..</p>
+            <a href="loseweight.php"><button class="btn">more</button></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="images/img2.jpg" alt="">
+        <div class="info">
+            <h3>FLEXIBILITY</h3>
+            <p>Enhance your body's flexibility and mobility for improved overall wellness.</p>
+            <a href="flexibility.php"><button class="btn">more</button></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="images/img3.jpg" alt="">
+        <div class="info">
+            <h3>TONE UP</h3>
+            <p>Refine your body's shape and definition with specialized toning exercises and routines.</p>
+            <a href="tone.php"><button class="btn">more</button></a>
+        </div>
+    </div>
+
+
+    <div class="box">
+        <img src="images/img5.jpg" alt="">
+        <div class="info">
+            <h3>STRENGTH</h3>
+            <p>Unlock your full potential with strength-building exercises and training.</p>
+            <a href="strength.php"><button class="btn">more</button></a>
+        </div>
+    </div>
+
+    <div class="box">
+        <img src="images/img6.jpg" alt="">
+        <div class="info">
+            <h3>BUILD MUSCLE</h3>
+            <p>Sculpt a strong and toned physique through effective muscle-building programs.</p>
+            <a href="gain.php"><button class="btn">more</button></a>
+        </div>
+    </div>
+
+</div>
+
+</section>
+
+<!-- footer section starts  -->
+
+<section class="footer">
+   <p style="text-align: left;"><strong> Contact us</strong><br>
+    +919567641374<br>
+    +917994586645</p>
+&copy; all rights reserved.
+</section>
+
+<!-- footer section ends -->
+
+<!-- service section ends -->
+
+<!-- jquery cdn link  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- custom js file link  -->
+<script src="js/main.js"></script>
+
+
+</body>
+</html>
